@@ -1,0 +1,16 @@
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l=len(nums)
+        low=0
+        hih=l-1
+        mid=0
+        while low<=hih:
+            mid=low+(hih-low)//2
+            if nums[mid]==target:
+                return mid
+            elif nums[mid]>target:
+                hih=mid-1
+            elif nums[mid]<target:
+                low=mid+1
+        return -1
+        
